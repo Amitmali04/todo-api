@@ -17,7 +17,7 @@ const app = express();
 //databse config
 connectDB();
 
-const PORT = 8005 || process.env.PORT
+const PORT =  process.env.PORT ||8005
 
 app.use(cors());
 app.use(express.json());
