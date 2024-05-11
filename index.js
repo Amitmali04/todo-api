@@ -22,6 +22,10 @@ const PORT =  process.env.PORT ||8005
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello Amit");
+})
+
 app.use('/api/v1/auth', userRoutes)
 app.use('/api/v1/task', todoRoutes)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument
@@ -36,9 +40,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument
 ));
 
 
-app.get("/", (req, res) => {
-    res.send("Hello Amit");
-})
+
 
 app.listen(PORT, ()=>{
     console.log(`Port  is running ON ${PORT}`);
